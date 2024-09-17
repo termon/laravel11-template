@@ -83,6 +83,7 @@ class UserController extends Controller
             ->with('success', "Successfully logged out");
     }
 
+    // --------------------- OAuth Routes (Azure) ------------------------
     public function azureLogin()
     {
 

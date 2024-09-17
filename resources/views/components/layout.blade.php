@@ -12,7 +12,7 @@
     <body class="flex min-h-screen flex-col">
         <header>
             <x-ui.nav class="bg-slate-50">
-                <x-ui.nav.title>Laravell11</x-ui.nav.title>
+                <x-ui.nav.title>Laravel11</x-ui.nav.title>
 
                 <x-ui.nav.link class="px-2" active="home" href="/">
                     Home
