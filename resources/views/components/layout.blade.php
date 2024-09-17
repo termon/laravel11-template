@@ -29,8 +29,9 @@
                         <x-slot:title>                            
                             @guest
                                 <div class="flex items-center"> 
-                                    <x-ui.nav.link href="{{route('login')}}">Login</x-ui.nav.link>
-                                    <x-ui.nav.link href="{{route('register')}}">Register</x-ui.nav.link>
+                                    <x-ui.nav.link href="{{route('azure.login')}}">Azure Login</x-ui.nav.link>
+                                    <x-ui.nav.link href="{{route('login')}}">Local Login</x-ui.nav.link>
+                                    <x-ui.nav.link href="{{route('register')}}">Local Register</x-ui.nav.link>
                                 </div>
                                 @endguest 
                                 @auth

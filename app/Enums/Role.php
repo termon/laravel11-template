@@ -4,11 +4,13 @@ namespace App\Enums;
 
 use App\Traits\EnumOptions;
 
-enum Role: string 
+enum Role: string
 {
     use EnumOptions;
 
     case ADMIN = "admin";
-    case AUTHOR = "author";
+    case ACADEMIC = "academic";
+    case STUDENT = "student";
+    case SUPPORT = "support";
     case GUEST = "guest";
 }

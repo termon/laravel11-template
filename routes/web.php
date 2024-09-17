@@ -21,4 +21,7 @@ Route::middleware('guest')->group(function () {
 
     Route::get("/login", [UserController::class, "login"])->name("login");
     Route::post("/login", [UserController::class, "authenticate"]);
+
+    Route::get("/auth/azure/login", [UserController::class, 'azureLogin'])->name('azure.login');
+    Route::get("/auth/azure/callback", [UserController::class, 'azureCallback'])->name('azure.callback');
 });

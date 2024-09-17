@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Enums\Role;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -13,10 +14,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            // --- updates for azure oauth
+            $table->string('azure_id')->index();
+            $table->string('azure_token');
+            $table->string('azure_refresh_token')->nullable();
+            $table->string('avatar');
+            // ---
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable(); // made nullable as no password stored with oauth
+            // added user role column
+            $table->string('role')->required()->default(Role::STUDENT);
             $table->rememberToken();
             $table->timestamps();
         });
